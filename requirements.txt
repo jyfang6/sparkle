@@ -1,0 +1,36 @@
+nltk 
+dill
+nltk
+wandb 
+base58
+openai
+tenacity
+transformers==4.50.0 
+accelerate
+bitsandbytes
+faiss-cpu>=1.8.0.post1
+matplotlib
+scipy
+litellm>=1.76.1 
+stopit
+loguru
+pandas
+dashscope
+rouge_score
+loguru
+overdue
+pandas
+dashscope
+deepspeed==0.16.5
+einops
+datasets 
+peft==0.17.0
+ray[default]==2.44.0
+spacy 
+rouge_score
+
+--index-url https://download.pytorch.org/whl/cu124
+--extra-index-url https://pypi.org/simple
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1

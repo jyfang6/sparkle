@@ -1,0 +1,40 @@
+policy_model_config:
+  model_name_or_path: qwen2.5_3b_instruct
+  padding_side: left 
+  load_in_8bit: false 
+  max_length: 4096 
+  max_new_tokens: 256 
+  # do_sample: true 
+  # num_beams: 5
+  # num_return_sequences: 1 
+  # temperature: 0.6
+  # top_p: 0.8
+  # top_k: 20
+  batch_size: 1 
+  use_demo: true 
+  # use_demo: false # 为了测试训练的模型用，如果效果不行的话记得改回true
+
+reasoning_model_config:
+  model_name_or_path: deepseek_r1_distill_qwen_14b
+  # model_name_or_path: deepseek_r1_distill_llama_8b 
+  # model_name_or_path: qwq_reasoning_32b 
+  padding_side: left 
+  load_in_8bit: true 
+  # load_in_4bit: true # only set for qwq_reasoning_32b
+  max_length: 4096 
+  max_new_tokens: 2048 
+  do_sample: true 
+  # num_beams: 1
+  num_return_sequences: 1 
+  temperature: 0.7
+  top_p: 0.8
+  top_k: 20
+  batch_size: 1 
+
+topk: 10 
+batch_size: 1 
+triple_filter_retriever: e5 
+num_candidate_triples: 25 
+max_num_context: 5 
+max_reasoning_steps: 20 
+max_retrieval_count: 5 

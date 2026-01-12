@@ -1,0 +1,53 @@
+dataset_class_name: KGChainRetrieverDataset 
+collator_class_name: E5Collator 
+name: 2wikimultihopqa 
+corpus: 2wikimultihopqa # 在 cal_doc_embeddings 的时候会用到
+
+# 下面的参数在构造训练数据的时候会用到
+raw_train_qa_file: /nfs/common/data/2wikimultihopqa/open_domain_data/train_qa_pairs.json 
+raw_dev_qa_file: /nfs/common/data/2wikimultihopqa/open_domain_data/dev_qa_pairs.json
+raw_test_qa_file: /nfs/common/data/2wikimultihopqa/open_domain_data/test_qa_pairs.json
+save_train_kg_retriever_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/train.json 
+save_dev_kg_retriever_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/dev.json
+save_train_kg_retriever_hard_negatives_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/train_with_hard_negatives.json
+save_dev_kg_retriever_hard_negatives_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/dev_with_hard_negatives.json
+
+save_train_kg_retriever_with_reader_feedback_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/train_with_reader_feedback.json
+save_dev_kg_retriever_with_reader_feedback_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/dev_with_reader_feedback.json
+
+# save_train_kg_retriever_with_reader_feedback_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/train_triple_selector.json
+# save_dev_kg_retriever_with_reader_feedback_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/dev_triple_selector.json
+
+# save_train_kg_retriever_with_reader_feedback_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/train_with_e5mistral_hard_negatives.json
+# save_dev_kg_retriever_with_reader_feedback_file: /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/dev_with_e5mistral_hard_negatives.json
+
+train_file: 
+  - /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/train_with_hard_negatives.json 
+dev_file: 
+  - /nfs/common/data/2wikimultihopqa/open_domain_data/kg_retriever/dev_with_hard_negatives.json
+test_file: None 
+
+# dataset 和 corpus的参数
+# num_positives: 1
+# num_hard_negatives: 1 
+# num_negatives: 0 
+# random_positive: False 
+
+# for query setting 
+question_prefix: '' # 为空是因为E5会自动在query和passage前分别加query: 和 passage: 
+use_title: False
+convert_triple_to_sentence: False
+chain_type: 'triple'
+
+# document setting 
+title_prefix: 'title:'
+passage_prefix: 'text:'
+
+num_positives: 4
+num_negatives: 7 
+
+# collator的参数
+query_maxlength: 512 
+doc_maxlength: 512 
+query_padding: max_sequence
+doc_padding: max_sequence 

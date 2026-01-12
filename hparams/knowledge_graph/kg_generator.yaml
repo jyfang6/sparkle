@@ -1,0 +1,9 @@
+max_length: 4096
+max_new_tokens: 512 
+
+# examplar_type由dataset决定
+num_examplars: 5 
+adaptive_examplars: True
+adaptive_examplars_retriever: e5 
+
+batch_size: 4
