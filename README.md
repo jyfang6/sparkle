@@ -53,7 +53,7 @@ bash inference_script.sh
 
 **LLM Output**: 
 ```
-<think> The question asks about the mother of the composer of the film "404". I need to identify the composer of "404" first from the given context.</think>
+<think> The question asks about the mother of the composer of the film "404". I need to first identify the composer of "404".</think>
 <think> The context for "404 (film)" mentions Prawaal Raman as the writer and director, but does not mention a composer. I need to look for information about the composer elsewhere.</think>
 <think> There is no direct information about the composer of "404" in the provided context. I should check if any composer is mentioned in relation to "404" in the other texts.</think>
 <think> The text for "Pilgrimage (2001 film)" mentions John Tavener as the composer of the score for that film, but "404" is not mentioned in this context.</think>
@@ -114,7 +114,8 @@ Because the comparison rule is not explicitly defined, the reasoning becomes str
 
 **LLM Output**: 
 ```
-<think> The question asks for the place of birth of the director of the film "Huey Long (film)". The context provides information about the film "Huey Long (film)" and its director, Ken Burns. </think>
+<think> The question asks for the place of birth of the director of the film "Huey Long (film)". I need to first find out the director of the film.</think>
+<think> The context provides information about the film "Huey Long (film)" and its director, Ken Burns. </think>
 <think> I need to find Ken Burns' place of birth from the given information. </think>
 <think> The context about Ken Burns states he was born in 1953 but does not specify his place of birth. </think>
 <think> However, the question specifically asks for the director of "Huey Long (film)", which is Ken Burns, and the context does not provide his place of birth. </think>
